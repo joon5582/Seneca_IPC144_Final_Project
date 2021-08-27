@@ -1,0 +1,64 @@
+// ===================================================================================
+//  Assignment: 2 
+//  Milestone : 4 (Reflect)
+// ===================================================================================
+//  Student Name  : Junwoo Lee
+//  Student ID    : 124395203
+//  Student Email : jlee648@myseneca.ca
+//  Course Section: NBB
+// ===================================================================================
+
+1.
+a) commonHelpers.h
+
+int getPositiveOrZeroInteger(void);
+
+b) account.h
+
+int SaveAllAccounts(struct AccountTicketingData* data);
+void getAccountwithNum(struct Account* ap, int accountNum);
+void getUserId(char* id, int from, int to);
+void getUserPw(char* pw, int from, int to);
+void getCountry(char* country, int from, int to);
+int archiveAccount(struct Account account);
+int countArchivedAccounts(void);
+
+c) ticket.h
+int SaveAllTickets(struct AccountTicketingData* data);
+int archiveClosedTickets(struct AccountTicketingData* data);
+void openMessages(const struct Ticket* ticket);
+void displayTicketsHeader(void);
+void displayCustomerTicketsHeader(void);
+void displayCustomerTicketsRecord(const struct AccountTicketingData* accountTicketingDataArray, const struct Account* ap);
+void displayNewTicketsRecord(const struct AccountTicketingData* accountTicketingDataArray);
+void displayActiveTicketsRecord(const struct AccountTicketingData* accountTicketingDataArray);
+void displayClosedTicketsRecord(const struct AccountTicketingData* accountTicketingDataArray);
+void getTicketwithNum(struct Ticket* tp, int ticketNum, const struct Account* ap);
+void writeMessageBycustomer(struct Ticket* tp);
+void writeMessageByagent(struct Ticket* tp, const struct Account* ap);
+int loadTickets(struct Ticket* tickets, int sizeOfTickets);
+int archiveTicket(struct Ticket ticket);
+int countArchivedTickets(int* tc, int* mc);
+
+d) accountTicketingUI.h
+
+int findTicketIndexByTicketNum(int ticketNum, const struct Ticket* ticketArray, int maxTicketNum, unsigned int flag);
+void updateTicketForAgent(struct Ticket* tp, const struct Account* ap);
+void updateTicketForCostomer(struct Ticket* tp);
+
+2.
+I loved the task of assigning databases in text files to arrays using file input and output. 
+It was not an easy task, but it was the first time that I had exchanged meaningful information with the data in ROM.
+And when I finally succeeded in loading from a text file without any problems and updating my account and ticket information in a text file, I felt a great deal of excitement. 
+The better I understand about file input and output, the less code to perform the required functions. It was another pleasure that I felt refining my code.
+In particular, each ticket has a different number of messages, so it can be said that it has a different format, but it was very meaningful to successfully load messages using the variable that stores the number of messages.
+The other my favorite task was creating functions related to struct Ticket by imitating those related to struct Account. As both have very similar aspects, I could do it in a paralleled way. 
+Even the function I wrote for the ticket structure inspired me to change the functions of the account structure into better code. And I felt proud to see the completeness of my code that is increasing as the task progresses.
+
+
+3.
+The hardest part was also getting data from text files. Because I was not familiar with the functions of file input and output, and I went through a lot of trial and error to load the given format correctly.
+Especially, I still have no idea about reading \n in the file. When I omitted reading \n at fscanf for each line of tickets.txt, it still worked well. \n may remain in buffer, but I think that \n can't be assigned to integer, so this may be why it worked.
+But eventually, I added additional fgetc to remove the remaining \n. The other thing is that I had to make a function that counts the number of items in each archive text file, but there was a problem that the last item is counted twice. 
+I managed to adjust my for loop's termination condition using the return value of fscanf, and It worked well. Anyway, I am very proud that I have trained my lack of experience in file input and output in a short term through such a difficult process.
+Actually I'm not afraid to have a hard time. Because it is a good opportunity to develop myself. In fact, I felt that I had developed a lot by going through the difficulties mentioned earlier, and I will continue to face them in the future.

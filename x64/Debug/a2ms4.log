@@ -1,0 +1,8 @@
+﻿  a2ms4.c
+  account.c
+  accountTicketingUI.c
+  commonHelpers.c
+C:\Users\joon5\Desktop\IPC144_Final_Project\commonHelpers.c(218,31): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  ticket.c
+  Generating Code...
+  a2ms4.vcxproj -> C:\Users\joon5\Desktop\IPC144_Final_Project\x64\Debug\a2ms4.exe
